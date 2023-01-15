@@ -9,10 +9,9 @@ params['hist_bins'] = 16  # Number of histogram bins
 params['spatial_feat'] = True  # Spatial features on or off
 params['hist_feat'] = True  # Histogram features on or off
 params['hog_feat'] = True  # HOG features on or off
-
 win_size={}
 win_size['ystart_0'], win_size['ystop_0'], win_size['scale_0']=350,600,0.8
 win_size['ystart_1'], win_size['ystop_1'], win_size['scale_1']=350,600,1.0
 win_size['ystart_2'], win_size['ystop_2'], win_size['scale_2']=350,600,1.2
 win_size['ystart_3'], win_size['ystop_3'], win_size['scale_3']=350,600,1.5
-win_size['use_scale']=(0,1,2,3)
+win_size['use_scale']=(2,3)
