@@ -6,6 +6,7 @@ from sklearn.preprocessing import StandardScaler
 import glob
 import os
 import pickle
+import matplotlib.image as mpimg
 os.chdir("/Users/datle/Desktop/phantich/dataset1")
 from hog_ultils import *
 from  parameter_setting import params
@@ -32,7 +33,7 @@ def get_feature(dataset,params):
     hog_feat = params['hog_feat']
     feature=[]
     for x in dataset:
-        img= cv2.imread(x)
+        img = mpimg.imread(x)
         img_feature= get_feture_of_image(img, color_space=color_space, spatial_size=spatial_size,
                                            hist_bins=hist_bins, orient=orient,
                                            pix_per_cell=pix_per_cell, cell_per_block=cell_per_block,
@@ -74,19 +75,7 @@ def save_model(pickcle_file, svc, sc, params):
                  'hist_bins': params['hist_bins'],
                  'spatial_feat': params['spatial_feat'],
                  'hist_feat': params['hist_feat'],
-                 'hog_feat': params['hog_feat'],
-                 'y_start_0': params['ystart_0'],
-                 'ystop_0': params['ystop_0'],
-                 'scale_0': params['scale_0'],
-                 'y_start_1':params['ystart_1'],
-                 'ystop_1':params['ystop_1'],
-                 'scale_1':params['scale_1'],
-                 'y_start_2': params['ystart_2'],
-                 'ystop_2': params['ystop_2'],
-                 'scale_2': params['scale_2'],
-                 'y_start_3': params['ystart_3'],
-                 'ystop_3': params['ystop_3'],
-                 'scale_3': params['scale_3']
+                 'hog_feat': params['hog_feat']
                  },
                 pfile, pickle.HIGHEST_PROTOCOL)
     except Exception as e:
